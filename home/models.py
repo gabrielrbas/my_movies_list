@@ -8,3 +8,6 @@ class Movies(models.Model):
     whatched = models.BooleanField(default=False)
     date = models.DateField(blank=True, null=True)
     review = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return self.name
