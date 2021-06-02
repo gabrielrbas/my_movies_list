@@ -6,46 +6,51 @@
 		<div class="col-md-4">
 			<div class="row">
 				<div class="col-md-12">
-					<img alt="Bootstrap Image Preview" src="{{movie.pic.url}}">
+					<img alt="Jhon Wick" src="{{movie.pic.url}}"  style="max-width: 300px; height: auto;">
 				</div>
 			</div>
 		</div>
 		<div class="col-md-8">
-			<h3 class="text-center">
-				h3. Lorem ipsum dolor sit amet.
-			</h3>
+			<h1 class="text-center">
+				{{movie.name}}
+			</h1>
+      <h1>⠀⠀⠀⠀⠀⠀⠀⠀⠀</h1>
 			<div class="row">
 				<div class="col-md-6">
-					<h3 class="text-left">
-						h3. Lorem ipsum dolor sit amet.
-					</h3>
+					<h5 class="text-left">
+            Assistido: {%if movie.whatched%}Sim {%else%}Não {%endif%}
+					</h5>
 				</div>
 				<div class="col-md-6">
-					<h3 class="text-right">
-						h3. Lorem ipsum dolor sit amet.
-					</h3>
+					<h5 class="text-right">
+						Data: {{movie.date|date:'d/m/Y'}}
+					</h5>
 				</div>
 			</div>
-			<p>
-				Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
-			</p>
+      <h1>⠀⠀⠀⠀⠀⠀⠀⠀⠀</h1>
+      <div class="row">
+				<div class="col-md-12">
+					<h5 class="text-left">
+						Resenha
+					</h5>
+					<p class="text-left">
+            {{movie.review}}
+					</p>
+      <h1>⠀⠀⠀⠀⠀⠀⠀⠀⠀</h1>
 			<div class="row">
 				<div class="col-md-4">
-					 
-					<button type="button" class="btn btn-secondary">
-						Button
-					</button>
+          <a class="btn btn-secondary" href="{%url 'index'%}" role="button">Voltar</a>
 				</div>
 				<div class="col-md-4">
 					 
 					<button type="button" class="btn btn-primary">
-						Button
+						Editar
 					</button>
 				</div>
 				<div class="col-md-4">
 					 
 					<button type="button" class="btn btn-danger">
-						Button
+						Excluir
 					</button>
 				</div>
 			</div>

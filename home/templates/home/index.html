@@ -21,9 +21,9 @@
         {%else%}
         <td>Não</td>
         {%endif%}
-        <td>{{movie.date}}</td>
+        <td>{{movie.date|date:'d/m/Y'}}</td>
         <td>
-          <a class="btn btn-secondary" href="#" role="button">Detalhes</a>
+          <a class="btn btn-secondary" href="{%url 'detail' movie.id%}" role="button">Detalhes</a>
         </td>
       </tr>
       {%endfor%}
