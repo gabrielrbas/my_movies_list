@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Movies
+from .forms import MovieForm
 
 
 def index(request):
@@ -13,4 +14,7 @@ def detail(request, movie_id):
 
 
 def new_movie(request):
-    return render(request, "home/new_movie.html")
+    form = MovieForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+    return render(request, "home/new_movie.html", {"form": form})

@@ -1,4 +1,5 @@
 {%extends 'base.html'%}
+{%load static%}
 
 {%block tab%}{{movie.name|title}} - Minha Lista de Filmes{%endblock%}
 
@@ -9,7 +10,11 @@
 		<div class="col-md-4">
 			<div class="row">
 				<div class="col-md-12">
-					<img alt="Jhon Wick" src="{{movie.pic.url}}"  style="max-width: 300px; height: auto;">
+					{%if movie.pic%}
+						<img alt="Image" src="{{movie.pic.url}}"  style="max-width: 300px; height: auto;">
+					{%else%}
+						<img alt="Image" src="{%static 'no_image.jfif'%}"  style="max-width: 300px; height: 450px;">
+					{%endif%}
 				</div>
 			</div>
 		</div>
