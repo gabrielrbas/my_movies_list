@@ -1,8 +1,26 @@
 {%extends 'base.html'%}
 
+{%block tab%}Minha Lista de Filmes{%endblock%}
+
 {%block content%}
 <h1>Minha Lista de Filmes</h1>
-<h1>⠀⠀⠀⠀⠀⠀⠀⠀⠀</h1>
+<h7>⠀⠀⠀⠀⠀⠀⠀⠀⠀</h7>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+      <td>
+        <a class="btn btn-primary" href="{%url 'new_movie'%}" role="button">Novo Filme</a>
+      </td>
+    </div>
+		<div class="col-md-3">
+    </div>
+		<div class="col-md-3">
+    </div>
+		<div class="col-md-3">
+		</div>
+	</div>
+</div>
+<h7>⠀⠀⠀⠀⠀⠀⠀⠀⠀</h7>
 <table class="table table-striped table-dark">
     <thead>
       <tr>
