@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'MOVIES.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': BASE_DIR / 'movies_db',
+        'NAME': 'movies_db',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'USER': 'root',
