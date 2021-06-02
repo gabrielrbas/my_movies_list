@@ -3,7 +3,7 @@ from .models import Movies
 
 
 class MoviesAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name')
+    list_display = ('id', 'name', 'whatched', 'date')
     list_display_links = ('id', 'name')
     list_filter = ('name',)
     search_fields = ('id', 'name')

@@ -1,7 +1,7 @@
 {%extends 'base.html'%}
 
 {%block content%}
-<h1>Cover your page.</h1>
+<h1>Minha Lista de Filmes</h1>
 <h1>⠀⠀⠀⠀⠀⠀⠀⠀⠀</h1>
 <table class="table table-striped table-dark">
     <thead>
@@ -13,14 +13,20 @@
       </tr>
     </thead>
     <tbody>
+      {%for movie in movies%}
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
+        <th scope="row">{{movie.name}}</th>
+        {%if movie.whatched%}
+        <td>Sim</td>
+        {%else%}
+        <td>Não</td>
+        {%endif%}
+        <td>{{movie.date}}</td>
         <td>
-          <a class="btn btn-dark" href="#" role="button">Detalhes</a>
+          <a class="btn btn-secondary" href="#" role="button">Detalhes</a>
         </td>
       </tr>
+      {%endfor%}
     </tbody>
 </table>
 {%endblock%}
