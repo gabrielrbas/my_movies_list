@@ -1,4 +1,5 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponseRedirect
 from .models import Movies
 from .forms import MovieForm
 
@@ -14,7 +15,12 @@ def detail(request, movie_id):
 
 
 def new_movie(request):
-    form = MovieForm(request.POST or None)
-    if form.is_valid():
-        form.save()
+    if request.method == "POST":
+        form = MovieForm(request.POST, request.FILES)
+        if form.is_valid():
+            # file is saved
+            form.save()
+            return redirect("index")
+    else:
+        form = MovieForm()
     return render(request, "home/new_movie.html", {"form": form})
