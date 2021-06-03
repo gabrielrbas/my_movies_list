@@ -37,3 +37,12 @@ def update(request, movie_id):
     else:
         form = MovieForm()
     return render(request, "home/update.html", {"movie": movie})
+
+
+def delete(request, movie_id):
+    movie = get_object_or_404(Movies, id=movie_id)
+    if request.method == "DELETE":
+        form = Movies.objects.get(id=movie_id)
+        form.delete()
+        return redirect("index")
+    return render(request, "home/delete.html", {"movie": movie})
