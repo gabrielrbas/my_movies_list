@@ -9,7 +9,7 @@
   <div class="row">
     <div class="col-md-3">
       <td>
-        <a class="btn btn-primary" href="{%url 'new_movie'%}" role="button">Novo Filme</a>
+        <a class="btn btn-sm btn-primary" href="{%url 'new_movie'%}" role="button">Novo Filme</a>
       </td>
     </div>
 		<div class="col-md-3">
@@ -41,7 +41,7 @@
         {%endif%}
         <td>{{movie.date|date:'d/m/Y'}}</td>
         <td>
-          <a class="btn btn-secondary" href="{%url 'detail' movie.id%}" role="button">Detalhes</a>
+          <a class="btn btn-sm btn-secondary" href="{%url 'detail' movie.id%}" role="button">Detalhes</a>
         </td>
       </tr>
       {%endfor%}

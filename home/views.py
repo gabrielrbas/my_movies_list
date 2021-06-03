@@ -24,3 +24,8 @@ def new_movie(request):
     else:
         form = MovieForm()
     return render(request, "home/new_movie.html", {"form": form})
+
+
+def update(request, movie_id):
+    movie = get_object_or_404(Movies, id=movie_id)
+    return render(request, "home/update.html", {"movie": movie})
