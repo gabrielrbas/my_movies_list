@@ -28,4 +28,12 @@ def new_movie(request):
 
 def update(request, movie_id):
     movie = get_object_or_404(Movies, id=movie_id)
+    if request.method == "POST":
+        form = MovieForm(request.POST, request.FILES, instance=movie)
+        if form.is_valid():
+            # file is saved
+            form.save()
+            return redirect("index")
+    else:
+        form = MovieForm()
     return render(request, "home/update.html", {"movie": movie})
