@@ -46,3 +46,9 @@ def delete(request, movie_id):
         form.delete()
         return redirect("index")
     return render(request, "home/delete.html", {"movie": movie})
+
+
+def secure_delete(request, movie_id):
+    form = Movies.objects.get(id=movie_id)
+    form.delete()
+    return redirect("index")
